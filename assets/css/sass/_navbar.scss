@@ -1,0 +1,207 @@
+.page-navbar {
+  padding: 30px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+  background-color: transparent;
+  transition: $main-transition;
+
+  &.projects{
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+  }
+
+  &.scroll {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+  }
+
+  @media screen and (max-width: $screen-lg) {
+    padding: 20px 0;
+  }
+
+  .navbar-content {
+    @include between;
+
+    .side-open {
+      display: none;
+      font-size: 25px;
+      cursor: pointer;
+      color: $black;
+
+      @media screen and (max-width: $screen-lg) {
+        display: block;
+      }
+    }
+
+    .side-close {
+      position: absolute;
+      top: 15px;
+      @include dir-right(15px);
+      font-size: 25px;
+      cursor: pointer;
+      color: $white;
+      display: none;
+
+      @media screen and (max-width: $screen-lg) {
+        display: block;
+      }
+    }
+
+    .logo-links {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+
+      > .logo {
+        img {
+          max-width: 40px;
+          
+          @media (max-width: $screen-lg) {
+            max-width: 30px;
+          }
+
+          #{$ltr} & {
+            transform: scaleX(-1);
+          }
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      transition: all 0.8s cubic-bezier(0.68, -0.3, 0.265, 1.3);
+
+      @media screen and (max-width: $screen-lg) {
+        position: fixed;
+        top: 0;
+        @include dir-left(0);
+        height: 100vh;
+        width: 280px;
+        flex-direction: column;
+        align-items: flex-start;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: $nav-shadow;
+        z-index: 2000;
+        padding: 50px 20px;
+        #{$ltr} & {
+          transform: translateX(-150%);
+        }
+        #{$rtl} & {
+          transform: translateX(150%);
+        }
+
+        &.active {
+          transform: translateX(0) !important;
+        }
+
+        overflow-y: auto;
+        overflow-x: clip;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 25px;
+          background-color: $main;
+        }
+      }
+
+      .link {
+        color: $white;
+        font-size: 15px;
+        position: relative;
+
+        @media screen and (max-width: $screen-lg) {
+          display: block;
+          flex-shrink: 0;
+          width: fit-content;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          right: 0;
+          width: 0;
+          background-color: $white;
+          height: 1px;
+          transition: $main-transition;
+        }
+
+        &.active,
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+
+      .logo {
+        display: none;
+        max-width: 140px !important;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        @media screen and (max-width: $screen-lg) {
+          display: block;
+          margin-bottom: 25px;
+        }
+      }
+    }
+
+    .social-con {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @media screen and (max-width: $screen-xs) {
+        gap: 8px;
+      }
+
+      .whatsapp-ic {
+        color: $white;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        transition: $main-transition;
+
+        .num {
+          @media screen and (max-width: $screen-sm) {
+            display: none;
+          }
+        }
+      }
+
+      .social {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .ic {
+        font-size: 14px;
+        color: $white;
+        max-width: 15px;
+        max-height: 14px;
+        transition: $main-transition;
+      }
+    }
+  }
+}

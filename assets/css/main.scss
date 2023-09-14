@@ -1,0 +1,2331 @@
+@import "sass/variables", "sass/mixins", "sass/global", "sass/components",
+  "sass/navbar", "sass/footer";
+
+/***************** Start Home Section ****************/
+
+.home-section {
+  position: relative;
+  height: 100vh;
+  padding-top: 40px;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+
+  .container {
+    height: 100%;
+    @include center;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $black, $alpha: 0.5);
+    z-index: -1;
+  }
+
+  .home_video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    object-fit: cover;
+  }
+
+  .content {
+    text-align: center;
+    .img {
+      max-width: 300px;
+      max-height: 140px;
+      margin-bottom: 28px;
+
+      @media (max-width: $screen-md) {
+        max-width: 285px;
+        max-height: 110px;
+      }
+
+      @media (max-width: $screen-sm) {
+        max-width: 240px;
+        max-height: 100px;
+      }
+
+      @media (max-width: $screen-xs) {
+        max-width: 215px;
+        max-height: 80px;
+      }
+    }
+
+    .text {
+      color: $white;
+      font-size: 38px;
+      margin-bottom: 50px;
+      text-align: center;
+
+      @media (max-width: $screen-md) {
+        font-size: 38px;
+      }
+
+      @media (max-width: $screen-sm) {
+        font-size: 34px;
+      }
+
+      @media (max-width: $screen-xs) {
+        font-size: 28px;
+      }
+    }
+
+    .main-btn {
+      width: fit-content;
+      margin: auto;
+    }
+  }
+}
+
+.after-navbar {
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+/***************** End Home Section ****************/
+
+/***************** Start map_cards-sec Section ****************/
+.map_cards-sec {
+  position: relative;
+  padding: 160px 0 100px;
+
+  .bg {
+    opacity: 0.5;
+  }
+
+  @media (max-width: $screen-lg) {
+    padding: 80px 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 50%,
+      rgba($color: $black, $alpha: 0.6) 100%
+    );
+    z-index: -2;
+  }
+
+  .map_img {
+    position: absolute;
+    top: 20px;
+    @include dir-right(80px);
+    max-height: 620px;
+    width: 50%;
+    z-index: -1;
+
+    @media (max-width: $screen-lg) {
+      position: unset;
+      width: 100%;
+      max-height: 400px;
+    }
+  }
+
+  .building_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -4;
+    object-fit: cover;
+  }
+
+  .content {
+    margin-bottom: 50px;
+
+    @media (max-width: $screen-lg) {
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 35px;
+      color: $black;
+      margin-bottom: 15px;
+      font-weight: 700;
+
+      @media (max-width: $screen-lg) {
+        font-size: 30px;
+      }
+
+      @media (max-width: $screen-sm) {
+        font-size: 24px;
+      }
+    }
+
+    .info {
+      font-size: 19px;
+      line-height: 40px;
+      font-weight: 400;
+      color: $black;
+
+      @media (max-width: $screen-lg) {
+        font-size: 18px;
+      }
+
+      @media (max-width: $screen-sm) {
+        line-height: 33px;
+      }
+    }
+  }
+}
+
+/***** Start projects-cards Section ******/
+.projects-cards {
+  .project-card {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    height: 310px;
+
+    @media (max-width: $screen-sm) {
+      height: 280px;
+    }
+
+    @media (max-width: $screen-xs) {
+      height: 260px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba($color: $black, $alpha: 0.8) 100%
+      );
+      z-index: 1;
+    }
+
+    .buy {
+      position: absolute;
+      top: -60px;
+      @include dir-left(20px);
+      color: #fff;
+      padding: 70px 5px;
+      z-index: 2;
+      font-size: 16px;
+      writing-mode: vertical-rl;
+      background-color: $main;
+
+      #{$ltr} & {
+        transform: rotate(-130deg);
+      }
+
+      #{$rtl} & {
+        transform: rotate(-45deg);
+      }
+    }
+
+    .card-img {
+      height: 100%;
+      object-fit: cover;
+      transition: $main-transition;
+    }
+
+    .card-content {
+      padding: 0 15px;
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      @include center;
+      z-index: 2;
+
+      .name {
+        font-size: 20px;
+        color: $white;
+        font-weight: 700;
+        transition: $main-transition;
+
+        @media (max-width: $screen-lg) {
+          font-size: 18px;
+        }
+
+        @media (max-width: $screen-sm) {
+          font-size: 16px;
+        }
+      }
+
+      .main-link {
+        @include center;
+        height: 0;
+        width: 0;
+        background-color: rgba($color: $sec, $alpha: 0.9);
+        font-size: 16px;
+        color: $white;
+        text-decoration: none;
+        visibility: hidden;
+        flex-shrink: 0;
+
+        #{$ltr} & {
+          transform: translateX(100px) rotate(180deg);
+        }
+
+        #{$rtl} & {
+          transform: translateX(-100px);
+        }
+
+        transition: all 0.3s ease-in-out;
+        @include circle(30px);
+        width: 0;
+        height: 0;
+      }
+    }
+
+    &:hover {
+      box-shadow: $main-shadow;
+      .card-img {
+        transform: scale(1.1);
+      }
+      .card-content {
+        // gap: 15px;
+        .main-link {
+          height: 30px;
+          width: 30px;
+          visibility: visible;
+          display: flex;
+          @include dir-margin-left(15px);
+
+          #{$ltr} & {
+            transform: translateX(0) rotate(180deg) !important;
+          }
+
+          #{$rtl} & {
+            transform: translateX(0) !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.mt {
+    margin-top: 80px;
+
+    // @media (max-width: $screen-lg) {
+    //   margin-top: -80px;
+    // }
+
+    .project-card {
+      &:nth-child(odd) {
+        margin-top: -60px;
+
+        @media (max-width: $screen-lg2) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+/***** End projects-cards Section ******/
+
+/***** Start big-desc Section ******/
+.big-desc {
+  position: relative;
+  min-height: 150px;
+  margin: 80px auto 0;
+  @include center;
+  padding: 40px;
+
+  @media (max-width: $screen-lg) {
+    min-height: 125px;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding: 28px;
+    min-height: 110px;
+  }
+
+  .img_bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    #{$ltr} & {
+      transform: scaleX(-1);
+    }
+  }
+
+  .text {
+    font-size: 40px;
+    color: $black;
+    font-weight: 900;
+    margin-top: 30px;
+
+    @media (max-width: $screen-lg) {
+      font-size: 32px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: $screen-md) {
+      font-size: 24px;
+    }
+
+    @media (max-width: $screen-sm) {
+      font-size: 18px;
+    }
+
+    @media (max-width: $screen-xxs) {
+      font-size: 15px;
+    }
+  }
+}
+/***** End big-desc Section ******/
+
+/***************** End map_cards-sec Section ****************/
+
+/***************** Start slider Section ****************/
+
+.slider-sec {
+  background-color: $black;
+  position: relative;
+  z-index: 2;
+
+  .logo-sec {
+    position: absolute;
+    top: 0;
+    @include dir-left(0);
+    width: 60%;
+    height: 100%;
+    background-color: rgba($color: $main, $alpha: 1);
+    z-index: -1;
+
+    @media screen and (max-width: $screen-md) {
+      width: 100%;
+    }
+
+    .logo {
+      height: 100%;
+      max-width: 100%;
+
+      #{$ltr} & {
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  .slider-con {
+    .slider-item {
+      height: 600px;
+      width: 100%;
+      @include between;
+      gap: 20px;
+
+      @media screen and (max-width: $screen-md) {
+        height: 500px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: $black, $alpha: 0.6);
+        z-index: -1;
+        opacity: 0;
+        pointer-events: none;
+        transition: $main-transition;
+
+        @media screen and (max-width: $screen-md) {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+
+      .content {
+        width: 400px;
+
+        @media screen and (max-width: $screen-lg) {
+          width: 325px;
+        }
+
+        @media screen and (max-width: $screen-md) {
+          width: 100%;
+          padding: 20px;
+        }
+
+        .title {
+          font-size: 22px;
+          margin-bottom: 22px;
+          color: $white;
+          font-weight: 700;
+          @media screen and (max-width: $screen-lg) {
+            font-size: 20px;
+            margin-bottom: 19px;
+          }
+        }
+
+        .text {
+          font-size: 18px;
+          color: $white;
+          font-weight: lighter;
+          line-height: 1.7;
+
+          @media screen and (max-width: $screen-lg) {
+            font-size: 17px;
+          }
+        }
+      }
+
+      .slider-img {
+        width: calc(100% - 380px);
+        height: 100%;
+        object-fit: cover;
+
+        @media screen and (max-width: $screen-lg) {
+          width: calc(100% - 300px);
+        }
+
+        @media screen and (max-width: $screen-md) {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+          z-index: -2;
+        }
+      }
+    }
+  }
+
+  .owl-nav {
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $white !important;
+      transition: $main-transition;
+      @include circle(45px);
+      @include center;
+      font-size: 22px !important;
+      cursor: pointer;
+
+      i {
+        #{$ltr} & {
+          transform: scaleX(-1);
+        }
+      }
+
+      @media screen and (max-width: $screen-lg) {
+        display: none;
+      }
+    }
+
+    .owl-prev {
+      // right: -85px;
+      @include dir-left(-85px);
+      background-color: rgba($color: #d7d8d6, $alpha: 0.4) !important;
+    }
+
+    .owl-next {
+      // left: -85px;
+      @include dir-right(-85px);
+      background-color: rgba($color: #5a5e5e, $alpha: 0.7) !important;
+    }
+  }
+
+  .owl-dots {
+    @include center;
+    gap: 6px;
+    margin-top: 25px;
+    position: absolute;
+    transition: $main-transition;
+
+    @media screen and (max-width: $screen-md) {
+      @include dir-left(20px);
+      margin-top: 50px;
+    }
+
+    .owl-dot {
+      height: 7px;
+      width: 16px;
+      background-color: $white !important;
+      opacity: 0.25;
+      transition: $main-transition;
+      border-radius: 8px;
+
+      &.active {
+        opacity: 1;
+        width: 38px;
+      }
+    }
+  }
+}
+
+/***************** End slider Section ****************/
+
+/***************** Start filter Section ****************/
+
+.filter-sec {
+  position: relative;
+  padding: 100px 0;
+
+  @media screen and (max-width: $screen-md) {
+    padding: 50px 0;
+  }
+
+  .content {
+    @include center;
+    flex-direction: column;
+
+    .text {
+      font-size: 19px;
+      margin: 25px 0 15px;
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 17px;
+        margin: 20px 0 10px;
+      }
+    }
+
+    .logo {
+      max-width: 180px;
+
+      @media screen and (max-width: $screen-xs) {
+        max-width: 140px;
+      }
+    }
+  }
+}
+
+.filter-box {
+  background-color: $white;
+  border-radius: 20px;
+  box-shadow: $sec-shadow;
+  padding: 0 30px;
+
+  .box-top {
+    @include between;
+    align-items: end;
+    gap: 15px;
+    padding: 25px 0 18px;
+
+    .aline {
+      margin-bottom: 19px;
+    }
+
+    .select-container {
+      flex: 1;
+      @include center;
+      gap: 12px;
+      margin-bottom: 10px;
+
+      .select-item {
+        @include center;
+        width: 135px !important;
+        flex-direction: column;
+        gap: 7px;
+        flex-shrink: 0;
+
+        .top {
+          color: $black;
+          @include center;
+          gap: 7px;
+          font-weight: 600;
+          font-size: 15px;
+          .ic {
+            max-width: 20px;
+            max-height: 20px;
+          }
+        }
+      }
+
+      .select {
+        ~ .select2 {
+          .select2-selection {
+            border-radius: 8px !important;
+            min-height: 40px !important;
+          }
+        }
+      }
+    }
+
+    .range-sec {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      .text {
+        font-size: 14px;
+        font-weight: 600;
+        color: $black;
+      }
+    }
+  }
+
+  .box-bottom {
+    padding: 18px 0 25px;
+    border-top: 1px solid $border-color;
+    @include between;
+    gap: 15px;
+
+    .right,
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .label {
+        font-size: 16px;
+        color: $black;
+        font-weight: 600;
+      }
+
+      .rest-btn {
+        background-color: transparent;
+        font-size: 15px;
+        color: $black;
+        padding: 0;
+      }
+    }
+
+    .filter-radio-con {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $border-color;
+      gap: 15px;
+
+      .radio-item {
+        input {
+          display: none;
+        }
+
+        .text {
+          font-size: 15px;
+          color: $black;
+          cursor: pointer;
+          position: relative;
+          padding-bottom: 6px;
+
+          &::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            background-color: $main;
+            width: 0;
+            transition: $main-transition;
+          }
+        }
+
+        input:checked + .text {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.unit-card {
+  border-radius: 15px;
+  padding: 13px 15px;
+  background-color: $white;
+  box-shadow: $main-shadow;
+  transition: $main-transition;
+
+  .unit-img {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    margin-bottom: 15px;
+
+    .img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      transition: $main-transition;
+      transform: scale(1.1);
+
+      @media screen and (max-width: $screen-md) {
+        transform: scale(1);
+      }
+    }
+
+    .unit {
+      position: absolute;
+      top: 18px;
+      @include dir-left(20px);
+      color: $black;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .buy-status,
+    .rent-status {
+      position: absolute;
+      top: 14px;
+      color: $white;
+      font-size: 14px;
+      border-radius: 25px;
+      padding: 3px 20px;
+      @include dir-right(17px);
+      z-index: 2;
+      background-color: $main;
+    }
+  }
+
+  .unit-body {
+    padding: 0 7px;
+  }
+
+  .unit-head {
+    @include between;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    .name {
+      font-size: 16px;
+      color: $black;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .unit-footer {
+    margin-top: 15px;
+    padding: 10px 15px 0;
+    border-top: 1px solid $border-color;
+    background-color: transparent;
+    font-size: 15px;
+    color: $black;
+    cursor: pointer;
+    @include center;
+    gap: 7px;
+
+    i {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+
+  &.rent-status {
+    .unit-img {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba($color: $black, $alpha: 0.5) 100%
+        );
+        z-index: 1;
+      }
+
+      .buy-status {
+        background-color: $bink;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: $sec-shadow;
+
+    .unit-img {
+      .img {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+/***************** End filter Section ****************/
+
+/***************** Start after-sales Section ****************/
+
+.after-sales {
+  padding: 90px 0;
+
+  @media screen and (max-width: $screen-xs) {
+    padding: 60px 0;
+  }
+
+  .text-container {
+    text-align: center;
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+
+      @media screen and (max-width: $screen-lg) {
+        font-size: 22px;
+      }
+
+      @media screen and (max-width: $screen-sm) {
+        font-size: 18px;
+      }
+    }
+
+    .desc {
+      font-size: 20px;
+      line-height: 1.7;
+      font-weight: 300;
+
+      @media screen and (max-width: $screen-lg) {
+        font-size: 17px;
+      }
+
+      @media screen and (max-width: $screen-sm) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .items-con {
+    margin-top: 50px;
+    @include grid(250px, 0);
+    gap: 15px 0;
+
+    @media screen and (max-width: $screen-lg) {
+      gap: 0 !important;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      @include grid(180px, 0);
+    }
+
+    .item {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.7;
+      padding: 0 15px;
+      text-align: center;
+      position: relative;
+      height: 100%;
+
+      @media screen and (max-width: $screen-lg) {
+        // border: 1px solid $text-color;
+        padding: 15px;
+        font-size: 16px;
+        @include dir-padding(15px , 20px, 15px, 15px)
+      }
+      
+      @media screen and (max-width: $screen-sm) {
+        font-size: 15px;
+        font-weight: 600;
+      }
+      
+      @media screen and (max-width: $screen-xs) {
+        font-size: 14px;
+        @include dir-padding(15px , 14px, 15px, 10px)
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        @include dir-right(0);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 50px;
+        background-color: $text-color;
+
+        // @media screen and (max-width: $screen-lg) {
+        //   display: none;
+        // }
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+      
+      &:nth-child(even){
+        &::after {
+          @media screen and (max-width: $screen-lg) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .building-con {
+    @include center;
+    margin-top: 40px;
+    position: relative;
+
+    .building_img {
+      max-width: 300px;
+
+      @media screen and (max-width: $screen-xs) {
+        max-width: 230px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      bottom: 18px;
+      height: 6px;
+      background-color: $black;
+
+      @media screen and (max-width: $screen-xs) {
+        bottom: 13px;
+        height: 5px;
+      }
+    }
+  }
+
+  .sales-text {
+    background-color: $black;
+    font-size: 20px;
+    color: $white;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 16px;
+    }
+  }
+
+  .features-con {
+    margin-top: 40px;
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .icon {
+        max-width: 40px;
+        max-height: 40px;
+
+        @media screen and (max-width: 500px) {
+          max-width: 26px;
+          max-height: 26px;
+        }
+      }
+
+      .name {
+        font-size: 17px;
+        font-weight: bold;
+        margin-bottom: 4px;
+
+        @media screen and (max-width: 500px) {
+          font-size: 15px;
+        }
+      }
+
+      .text {
+        font-size: 15px;
+
+        @media screen and (max-width: 500px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .col-res {
+    @media screen and (max-width: 399px) {
+      width: 100% !important;
+    }
+  }
+}
+
+/***************** End after-sales Section ****************/
+
+/***************** Start Contact Section ****************/
+
+.contact-box {
+  border-radius: 25px;
+  background-color: rgba($color: $black, $alpha: 0.06);
+  @include dir-padding(22px, 15px, 22px, 50px);
+
+  @media screen and (max-width: $screen-md) {
+    padding: 25px 20px !important;
+  }
+
+  .map {
+    height: 280px;
+    width: 100%;
+    background-color: $white;
+    border-radius: 15px;
+
+    &.lg {
+      height: 380px;
+    }
+  }
+
+  .content {
+    width: 100%;
+
+    .contact-title {
+      font-size: 22px;
+      color: $black;
+      font-weight: bold;
+      margin-bottom: 35px;
+
+      @media screen and (max-width: $screen-md) {
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 17px;
+      }
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .icon {
+        @include circle(52px);
+        background-color: $border-color;
+        @include center;
+        flex-shrink: 0;
+
+        @media screen and (max-width: $screen-md) {
+          @include circle(46px);
+        }
+
+        .ic {
+          max-width: 22px;
+          max-height: 22px;
+
+          @media screen and (max-width: $screen-md) {
+            max-width: 18px;
+          }
+        }
+      }
+
+      .info {
+        .name {
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 4px;
+          color: $black;
+
+          @media screen and (max-width: $screen-md) {
+            font-size: 16px;
+          }
+
+          @media screen and (max-width: $screen-xs) {
+            font-size: 15px;
+          }
+        }
+
+        .link {
+          font-size: 16px;
+          color: $white2;
+
+          @media screen and (max-width: $screen-md) {
+            font-size: 15px;
+          }
+
+          @media screen and (max-width: $screen-xs) {
+            font-size: 14px;
+          }
+
+          &:hover {
+            color: $main;
+          }
+        }
+
+        .google {
+          color: #0058bf;
+        }
+      }
+    }
+
+    .header-con {
+      display: flex;
+      align-items: start;
+      gap: 15px;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid $border-color;
+
+      .ic {
+        max-width: 22px;
+      }
+
+      .left {
+        .title {
+          font-size: 17px;
+          font-weight: 700;
+          margin-bottom: 7px;
+        }
+
+        .desc {
+          font-size: 16px;
+          color: $white2;
+        }
+      }
+    }
+  }
+}
+
+.interest-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media screen and (max-width: $screen-lg) {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .right {
+    width: 380px;
+
+    @media screen and (max-width: $screen-lg) {
+      width: 100%;
+    }
+
+    .title {
+      font-size: 21px;
+      margin-bottom: 12px;
+      color: $black;
+      font-weight: bold;
+    }
+
+    .text {
+      font-size: 17px;
+      color: $black;
+    }
+  }
+
+  .interest-form {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    align-items: end;
+
+    @media screen and (max-width: $screen-lg) {
+      flex-wrap: wrap;
+    }
+
+    .input-me,
+    .main-btn {
+      height: 48px !important;
+
+      &::placeholder {
+        font-size: 13px;
+        color: #b2b5b6;
+        transition: $main-transition;
+      }
+    }
+
+    .name_inp {
+      flex: 2;
+    }
+
+    .phone_inp {
+      flex: 1;
+    }
+
+    .main-input {
+      @media screen and (max-width: $screen-lg) {
+        min-width: 240px;
+        flex: 1;
+      }
+    }
+  }
+}
+
+/***************** End Contact Section ****************/
+
+/***************** Start detailes_top Section ****************/
+
+.detailes_top {
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  height: 720px;
+
+  @media screen and (max-width: $screen-lg) {
+    flex-wrap: wrap-reverse;
+    height: auto;
+  }
+
+  .right-sec {
+    position: relative;
+    background-color: rgba($color: #000000, $alpha: 1);
+    z-index: 2;
+    flex-basis: 45%;
+    flex-shrink: 0;
+    @include dir-padding(150px, 50px, 50px, 100px);
+    display: flex;
+    align-items: center;
+    color: $white;
+
+    @media screen and (max-width: 1290px) {
+      @include dir-padding(80px, 25px, 50px, 50px);
+    }
+
+    @media screen and (max-width: $screen-lg) {
+      flex-basis: 100%;
+      padding: 80px 0 !important;
+      justify-content: center;
+    }
+
+    .logo {
+      position: absolute;
+      top: 0;
+      @include dir-left(0);
+      height: 100%;
+      max-width: 100%;
+      z-index: -1;
+      // opacity: 0.2;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to top right,
+        rgba($color: $white, $alpha: 0.2) 0%,
+        rgba($color: $black, $alpha: 0.1) 100%
+      );
+      z-index: -1;
+    }
+
+    .content {
+      width: 100%;
+
+      @media (min-width: 768px) {
+        max-width: 720px;
+      }
+
+      @media (min-width: 576px) {
+        max-width: 540px;
+      }
+
+      @media screen and (max-width: $screen-sm) {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .title {
+        font-size: 28px;
+        font-weight: bold;
+        color: $white;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: $screen-md) {
+          font-size: 25px;
+        }
+
+        @media screen and (max-width: $screen-xs) {
+          font-size: 22px;
+        }
+      }
+
+      .text {
+        font-size: 16px;
+        color: $white;
+        font-weight: 400;
+
+        @media screen and (max-width: $screen-xs) {
+          font-size: 15px;
+        }
+      }
+
+      .detailes-items {
+        margin: 25px 0;
+        padding: 15px 0;
+        border-top: 1px solid rgba($color: $white, $alpha: 0.3);
+        border-bottom: 1px solid rgba($color: $white, $alpha: 0.3);
+        @include between;
+        gap: 15px;
+
+        @media screen and (max-width: $screen-xs) {
+          gap: 12px;
+        }
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          @media screen and (max-width: $screen-xl) {
+            gap: 10px;
+          }
+
+          @media screen and (max-width: $screen-xs) {
+            gap: 8px;
+          }
+
+          .icon {
+            max-width: 40px;
+            max-height: 40px;
+
+            @media screen and (max-width: $screen-xl) {
+              max-width: 34px;
+              max-height: 34px;
+            }
+
+            @media screen and (max-width: $screen-xs) {
+              max-width: 30px;
+              max-height: 30px;
+            }
+          }
+
+          .name {
+            font-size: 16px;
+            color: $white;
+            margin-bottom: 4px;
+            font-weight: 700;
+
+            @media screen and (max-width: $screen-xl) {
+              font-size: 15px;
+            }
+
+            @media screen and (max-width: $screen-xs) {
+              font-size: 14px;
+            }
+          }
+
+          .detaile {
+            font-size: 15px;
+            color: $white;
+            font-weight: 400;
+
+            @media screen and (max-width: $screen-xs) {
+              font-size: 13px;
+            }
+          }
+        }
+
+        .line {
+          width: 1px;
+          height: 50px;
+          background-color: rgba($color: $white, $alpha: 0.3);
+
+          &:last-of-type {
+            display: none;
+          }
+        }
+      }
+
+      .house {
+        background-color: rgba($color: #ebe7d7, $alpha: 0.3);
+        padding: 7px 14px;
+        width: fit-content;
+        @include center;
+        gap: 10px;
+        margin-bottom: 60px;
+
+        .text {
+          color: $white;
+          font-size: 15px;
+        }
+
+        .line {
+          width: 1px;
+          background-color: rgba($color: $white, $alpha: 0.3);
+          height: 20px;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        @media screen and (max-width: $screen-xs) {
+          gap: 10px;
+        }
+
+        .main-btn {
+          @media screen and (max-width: $screen-xxs) {
+            min-width: 115px;
+          }
+        }
+
+        .text {
+          font-size: 15px;
+          color: $white;
+
+          @media screen and (max-width: $screen-xxs) {
+            font-size: 14px;
+          }
+        }
+
+        .aqarek_img {
+          max-width: 120px;
+
+          @media screen and (max-width: $screen-xs) {
+            max-width: 100px;
+          }
+        }
+      }
+    }
+  }
+
+  .left-sec {
+    position: relative;
+    flex-basis: 55%;
+    flex-shrink: 0;
+    z-index: 2;
+    height: 720px;
+
+    @media screen and (max-width: $screen-lg) {
+      flex-basis: 100%;
+      height: 600px;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      height: 500px;
+    }
+  }
+
+  .product-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to top,
+        rgba($color: $black, $alpha: 0.8) 0%,
+        transparent 70%,
+        rgba($color: $black, $alpha: 0.8) 100%
+      );
+      z-index: 1;
+    }
+    .pro-slide-img {
+      width: 100%;
+      height: 720px;
+      object-fit: cover;
+
+      @media screen and (max-width: $screen-lg) {
+        height: 600px;
+      }
+
+      @media screen and (max-width: $screen-md) {
+        height: 500px;
+      }
+    }
+  }
+
+  // Product Thumbs
+  .owl-thumbs {
+    z-index: 2;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: calc(100% - 220px);
+    display: flex;
+    overflow-x: auto;
+
+    @media screen and (max-width: $screen-md) {
+      max-width: calc(100% - 125px);
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .owl-thumb-item {
+      margin: 0;
+      background-color: transparent;
+      padding: 0 2px;
+      img {
+        height: 100px !important;
+        width: 100px;
+        object-fit: cover;
+        opacity: 0.4 !important;
+        transition: $main-transition;
+        border: 1px solid rgba($color: $white, $alpha: 0.5);
+
+        @media screen and (max-width: $screen-md) {
+          height: 90px !important;
+          width: 90px;
+        }
+      }
+
+      &.active {
+        img {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+
+  .owl-dots {
+    z-index: 2;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    line-height: 1;
+
+    @media screen and (max-width: $screen-xs) {
+      bottom: 10px;
+    }
+
+    .owl-dot {
+      span {
+        height: 6px;
+        width: 16px;
+        background-color: $white !important;
+        opacity: 0.25;
+        transition: $main-transition;
+        border-radius: 8px;
+        margin: 0 3px;
+      }
+
+      &.active {
+        span {
+          opacity: 1;
+          width: 36px;
+        }
+      }
+    }
+  }
+
+  .owl-nav {
+    margin-top: 0;
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      bottom: 90px;
+      color: #fff !important;
+      transition: all 0.3s ease-in-out;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px !important;
+      cursor: pointer;
+      z-index: 2;
+      background-color: rgba($color: #d7d8d6, $alpha: 0.4) !important;
+
+      @media screen and (max-width: $screen-xs) {
+        bottom: 84px;
+      }
+
+      i {
+        @media screen and (min-width:$screen-lg) {
+          #{$ltr} & {
+            transform: scaleX(-1);
+          }
+        }
+      }
+    }
+  }
+}
+
+/***************** End detailes_top Section ****************/
+
+/***************** Start main-advantages Section ****************/
+
+.main-advantages {
+  position: relative;
+
+  .content-container {
+    display: flex;
+    gap: 50px;
+    position: relative;
+
+    @media screen and (max-width: 1290px) {
+      gap: 35px;
+    }
+
+    @media screen and (max-width: $screen-lg) {
+      flex-direction: column-reverse;
+    }
+
+    .squre_line_img {
+      position: absolute;
+      bottom: -18px;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      z-index: 1;
+
+      @media screen and (max-width: $screen-xs) {
+        height: 68px;
+        bottom: -11px;
+      }
+    }
+
+    .advantages_img {
+      width: 300px;
+      height: 450px;
+      object-fit: cover;
+
+      @media screen and (max-width: $screen-lg) {
+        width: 100%;
+        height: 400px;
+      }
+
+      @media screen and (max-width: $screen-sm) {
+        height: 320px;
+      }
+    }
+
+    .content {
+      width: 100%;
+
+      .head {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 70px;
+
+        @media screen and (max-width: $screen-md) {
+          font-size: 20px;
+          margin-bottom: 50px;
+        }
+
+        @media screen and (max-width: $screen-xs) {
+          font-size: 18px;
+          margin-bottom: 40px;
+        }
+      }
+
+      .advantage-items {
+        @include grid(240px, 30px);
+
+        @media screen and (max-width: 1290px) {
+          @include grid(210px, 30px);
+        }
+
+        @media screen and (max-width: $screen-sm) {
+          @include grid(165px, 15px);
+        }
+
+        .item {
+          @include center;
+          flex-direction: column;
+          gap: 18px;
+
+          .icon {
+            max-width: 46px;
+            max-height: 46px;
+
+            @media screen and (max-width: $screen-sm) {
+              max-width: 42px;
+              max-height: 42px;
+            }
+          }
+
+          .name {
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+
+            @media screen and (max-width: $screen-sm) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/***************** End main-advantages Section ****************/
+
+/***************** Start About_us Section ****************/
+
+.about_us {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 120px 0 100px;
+  z-index: 2;
+
+  @media screen and (max-width: $screen-md) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo_bg {
+    position: absolute;
+    top: 40px;
+    @include dir-left(0);
+    max-height: 100%;
+    max-width: 700px;
+    z-index: -1;
+
+    @media screen and (max-width: $screen-md) {
+      max-width: 100%;
+    }
+
+    #{$ltr} & {
+      transform: scaleX(-1);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to top right,
+      rgba($color: $black, $alpha: 0.7) 0%,
+      rgba($color: $black, $alpha: 0.7) 50%,
+      rgba($color: $black, $alpha: 0.9) 100%
+    );
+    z-index: -2;
+
+    #{$ltr} & {
+      transform: scaleX(-1);
+    }
+  }
+
+  .about_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+
+    #{$ltr} & {
+      transform: scaleX(-1);
+    }
+  }
+
+  .content {
+    .logo {
+      max-width: 270px;
+      margin-bottom: 30px;
+      display: block;
+
+      @media screen and (max-width: $screen-lg) {
+        max-width: 220px;
+      }
+
+      @media screen and (max-width: $screen-md) {
+        max-width: 170px;
+      }
+    }
+
+    .info {
+      font-size: 20px;
+      line-height: 2;
+      color: $white;
+      font-weight: 300;
+
+      @media screen and (max-width: $screen-md) {
+        font-size: 17px;
+      }
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+/***************** End About_us Section ****************/
+
+/***************** Start our_vision Section ****************/
+
+.our_vision {
+  background-color: $black2;
+  position: relative;
+  display: flex;
+  height: 100vh;
+  min-height: 660px;
+  z-index: 2;
+
+  @media screen and (max-width: $screen-sm) {
+    min-height: 500px !important;
+  }
+
+  .squre_line_img {
+    position: absolute;
+    top: 0;
+    @include dir-left(75px);
+    height: 100%;
+    width: 110px;
+    z-index: 2;
+
+    @media screen and (max-width: $screen-md) {
+      z-index: -1;
+      @include dir-left(50px);
+      opacity: 0.4;
+    }
+  }
+
+  .vision_img {
+    width: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+
+    @media screen and (max-width: $screen-md) {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      height: 100%;
+      z-index: -2;
+      opacity: 0.4;
+    }
+  }
+
+  .content {
+    width: 50%;
+    flex-shrink: 0;
+    padding: 120px 80px;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @media screen and (max-width: $screen-xl) {
+      padding: 120px 50px;
+    }
+
+    @media screen and (max-width: $screen-lg) {
+      padding: 120px 25px;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      width: 100%;
+    }
+
+    .head {
+      font-size: 36px;
+      color: $white;
+      margin-bottom: 25px;
+      font-weight: bold;
+
+      @media screen and (max-width: $screen-lg) {
+        font-size: 32px;
+      }
+
+      @media screen and (max-width: $screen-sm) {
+        font-size: 24px;
+      }
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 22px;
+      }
+    }
+
+    .text {
+      font-size: 20px;
+      line-height: 2;
+      color: $white;
+
+      @media screen and (max-width: $screen-lg) {
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 16px;
+      }
+    }
+
+    .goal_items {
+      .goal_item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .ic {
+          max-width: 16px;
+
+          @media screen and (max-width: $screen-md) {
+            filter: invert(1);
+          }
+        }
+
+        .text {
+          font-size: 20px;
+          color: $black;
+
+          @media screen and (max-width: $screen-lg) {
+            font-size: 18px;
+          }
+
+          @media screen and (max-width: $screen-md) {
+            color: $white;
+          }
+
+          @media screen and (max-width: $screen-xs) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+
+    .squre_line_img {
+      position: absolute;
+      top: 0;
+      @include dir-right(75px);
+      @include dir-left(unset);
+      height: 100%;
+      width: 100px;
+      z-index: 2;
+    }
+  }
+
+  &.bg_blue {
+    background-color: $main;
+  }
+
+  &.goals {
+    @media screen and (max-width: $screen-md) {
+      background-color: $black !important;
+    }
+
+    .bg {
+      @media screen and (max-width: $screen-md) {
+        display: none;
+      }
+    }
+
+    .content {
+      .head {
+        color: $black;
+
+        @media screen and (max-width: $screen-md) {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+/***************** End our_vision Section ****************/
+
+/***************** Start our-projects Section ****************/
+
+.our-projects {
+  .projects_con {
+    display: flex;
+    align-items: start;
+
+    @media screen and (max-width: $screen-lg) {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+
+    .projects-cards {
+      @include grid(190px, 15px);
+      width: 480px;
+      flex-shrink: 0;
+
+      @media screen and (max-width: $screen-xl) {
+        width: 420px;
+      }
+
+      @media screen and (max-width: $screen-lg) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: $screen-xs) {
+        @include grid(165px, 12px);
+      }
+    }
+  }
+
+  .left {
+    position: sticky;
+    top: 90px;
+
+    @media screen and (max-width: $screen-lg) {
+      z-index: -1;
+    }
+  }
+
+  .content {
+    margin-bottom: 20px;
+    @include dir-margin-left(40px);
+
+    @media screen and (max-width: $screen-lg) {
+      text-align: center;
+      margin: 0 0 20px !important;
+    }
+
+    .title {
+      font-size: 33px;
+      color: $black;
+      margin-bottom: 12px;
+      font-weight: bold;
+
+      @media screen and (max-width: $screen-xl) {
+        font-size: 30px;
+      }
+
+      @media screen and (max-width: $screen-lg) {
+        font-size: 26px;
+      }
+
+      @media screen and (max-width: $screen-sm) {
+        font-size: 22px;
+      }
+    }
+
+    .info {
+      color: $black;
+      font-size: 18px;
+
+      @media screen and (max-width: $screen-sm) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .map_img {
+    max-width: 100%;
+  }
+}
+
+/***************** End our-projects Section ****************/
+
+/***************** Start Contact Us Section ****************/
+.contact-us {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 120px 0 30px;
+  z-index: 2;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      153deg,
+      rgba(0, 0, 0, 0.7904411764705882) 20%,
+      rgba(0, 0, 0, 0.2274159663865546) 56%,
+      rgba(0, 0, 0, 0.06775210084033612) 98%
+    );
+    z-index: -2;
+  }
+
+  .about_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+  }
+
+  .socials {
+    position: absolute;
+    bottom: 60px;
+    @include dir-right(100px);
+
+    @media screen and (max-width: $screen-lg) {
+      position: unset;
+      margin-top: 20px;
+    }
+
+    .social-con {
+      @include center;
+      gap: 10px;
+      margin: 5px 0;
+
+      .name {
+        color: $white;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: capitalize;
+        transition: $main-transition;
+
+        @media screen and (max-width: $screen-xs) {
+          font-size: 16px;
+        }
+      }
+
+      .social {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .ic {
+        font-size: 14px;
+        color: $white;
+        max-width: 16px;
+        max-height: 14px;
+        transition: $main-transition;
+      }
+    }
+
+    .whatsapp-ic {
+      @include center;
+      gap: 12px;
+
+      .num {
+        font-size: 19px;
+        color: $white;
+        font-weight: bold;
+
+        @media screen and (max-width: $screen-xs) {
+          font-size: 16px;
+        }
+      }
+
+      .ic {
+        max-width: 22px;
+
+        @media screen and (max-width: $screen-xs) {
+          max-width: 18px;
+        }
+      }
+    }
+  }
+}
+
+.contact_con {
+  display: flex;
+
+  .squre_img {
+    height: 550px;
+    width: 110px;
+    margin-top: 40px;
+
+    @media screen and (max-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  .form_con {
+    text-align: center;
+
+    .contact_form {
+      background-color: $white;
+      border-radius: 14px;
+      padding: 40px;
+      width: 500px;
+
+      @media screen and (max-width: $screen-sm) {
+        width: 100%;
+        padding: 35px 20px;
+      }
+
+      .logo {
+        max-width: 140px;
+
+        @media screen and (max-width: $screen-xs) {
+          max-width: 110px;
+        }
+      }
+
+      .info {
+        margin-top: 25px;
+        padding-top: 25px;
+        border-top: 1px solid #b2b5b6;
+
+        @media screen and (max-width: $screen-xs) {
+          margin-top: 18px;
+          padding-top: 18px;
+        }
+
+        .title {
+          font-size: 20px;
+          margin-bottom: 5px;
+          color: $black;
+          font-weight: bold;
+
+          @media screen and (max-width: $screen-xs) {
+            font-size: 18px;
+          }
+        }
+
+        .text {
+          font-size: 15px;
+          color: $black;
+        }
+      }
+    }
+
+    .copy {
+      font-size: 15px;
+      color: $white;
+      margin-top: 18px;
+      display: block;
+    }
+  }
+
+  .main-btn {
+    max-width: 100%;
+  }
+}
+/***************** End Contact Us Section ****************/
