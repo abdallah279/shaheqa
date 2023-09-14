@@ -5196,6 +5196,11 @@ html[lang=ar] .detailes_top .right-sec .logo {
   height: 110px;
   z-index: 1;
 }
+@media screen and (max-width: 1200px) {
+  .main-advantages .content-container .squre_line_img {
+    height: 95px;
+  }
+}
 @media screen and (max-width: 425px) {
   .main-advantages .content-container .squre_line_img {
     height: 68px;
@@ -5206,6 +5211,11 @@ html[lang=ar] .detailes_top .right-sec .logo {
   width: 300px;
   height: 450px;
   object-fit: cover;
+}
+@media screen and (max-width: 1200px) {
+  .main-advantages .content-container .advantages_img {
+    height: 500px;
+  }
 }
 @media screen and (max-width: 992px) {
   .main-advantages .content-container .advantages_img {
